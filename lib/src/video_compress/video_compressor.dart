@@ -50,11 +50,11 @@ extension Compress on IVideoCompress {
 
   /// getByteThumbnail return [Future<Uint8List>],
   /// quality can be controlled by [quality] from 1 to 100,
-  /// select the position unit in the video by [position] is milliseconds
+  /// select the position unit in the video by [position] is seconds
   Future<Uint8List?> getByteThumbnail(
     String path, {
     int quality = 100,
-    int position = -1,
+    double position = -1,
   }) async {
     assert(quality > 1 || quality < 100);
 
@@ -71,7 +71,7 @@ extension Compress on IVideoCompress {
   Future<File> getFileThumbnail(
     String path, {
     int quality = 100,
-    int position = -1,
+    double position = -1,
   }) async {
     assert(quality > 1 || quality < 100);
 
